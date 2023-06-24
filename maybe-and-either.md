@@ -21,7 +21,7 @@ function addWithNull(x: number, y: number | null): number | null {
     return x + y;
 }
 ```
-But the downside to this approach is that you have to check for null every single time this pattern is used, and your code will contain many `if(variable === null)`. This isn't horrible, but it feels like there could be a better way.
+But the downside to this approach is that you have to check for null every single time this pattern is used, and your code will contain many instances of `if(variable === null)`. This isn't horrible, but it feels like there could be a better way.
 
 Instead of a nullable type, what if we could use types to model potentially empty values? Let's create some types:
 ```typescript

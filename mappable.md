@@ -44,45 +44,45 @@ let intStrings: Array<string> = numbers.map((num: number) => num.toString());
 intString == ['1', '2', '3', '4', '5'];
 ```
 
-Now let's take this concept to Haskell.
-We'll map over a list using the add 1 function:
-```haskell
-numbers :: List Int = [1, 2, 3, 4, 5]
-mappedNumbers :: List Int = map (\num -> num + 1) numbers
+Now let's take this concept to PureScript.
+We'll map over an array using the add 1 function:
+```purescript
+numbers :: Array Int = [1, 2, 3, 4, 5]
+mappedNumbers :: Array Int = map (\num -> num + 1) numbers
 mappedNumbers == [2, 3, 4, 5, 6]
 ```
 
 And we can add `'s'` to strings:
-```haskell
+```purescript
 --add s mapping
 ```
 
-In PureScript, `map` is defined as `map :: (a -> b) -> container a -> container b`. This says that the first argument is a function taking any type `a` and returning any type `b`. Then the second argument is a container (such as a `List`) containing elements that have the type `a`, and finally returns the container with type `b`. The `b` values are the `a` values that have been transformed by the provided function.
+In PureScript, `map` is defined as `map :: (a -> b) -> container a -> container b`. This says that the first argument is a function taking any type `a` and returning any type `b`. Then the second argument is a container (such as an `Array`) containing elements that have the type `a`, and finally returns the container with type `b`. The `b` values are the `a` values that have been transformed by the provided function.
 
-We can map to any type, including those that provide structure. This example maps each element from an `Int` to a list of ints (`List Int`):
-```haskell
-numbers :: List Int = [1, 2, 3, 4, 5]
-listsOfNumbers :: List (List Int) = map (\num -> [num]) numbers
+We can map to any type, including those that provide structure. This example maps each element from an `Int` to an array of ints (`List Int`):
+```purescript
+numbers :: Array Int = [1, 2, 3, 4, 5]
+listsOfNumbers :: Array (Array Int) = map (\num -> [num]) numbers
 listOfNumbers == [[1], [2], [3], [4], [5]]
 ```
 
 An important concept about mapping is that it leaves the surrounding structure unchanged. In the previous examples, we didn't change the number of elements in the array. In fact, we don't need to care about the contents of the array. If the array was empty, we could still map over it, but the resulting array would also be empty:
 
-```haskell
+```purescript
 emptyNumbers :: List Int = []
 emptyMapped :: List Int = map (\num -> num * 8 + 1 - 93) emptyNumbers
 emptyMapped == []
 ```
 
-We can map values in structures other than lists. For example, we can map over the `Maybe`:
-```haskell
+We can map values in structures other than lists. For example, we can map over the `Maybe` type:
+```purescript
 maybeString :: Maybe String = Just "hello"
 mappedMaybe :: Maybe String = map (\str -> length str)
 mappedMaybe == Just 5
 ```
 
 Since Maybe has both `Just` and `Nothing` values, we can also map over `Nothing`.
-```haskell
+```purescript
 nothing :: Maybe String = Nothing
 mappedNothing :: Maybe Int = map (\str -> length str) nothing
 mappedNothing == Nothing
@@ -106,5 +106,5 @@ class Array<A> {
 ```
 
 In PureScript, this is how `map` is defined for `Maybe`.
-```haskell
+```purescript
 ```

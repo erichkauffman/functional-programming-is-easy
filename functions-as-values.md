@@ -32,8 +32,7 @@ for (let element in array) {
 }
 ```
 
-Often times, the loops that are written have the same structure. There is the `for` section which controls the loop, and the body of the loop which can be pretty much anything else.
-
+Often times, the loops that are written have the same structure. There is the `for` section which controls the loop, and the body of the loop which can pretty much be anything else.
 
 I want to point out in these examples is that there is some sort of 'outer' behavior which is the same, and there is some sort of 'inner' behavior that varies. 
 
@@ -47,7 +46,7 @@ function loop(array: Array<number>) {
 }
 ```
 
-This function now defines iterating behavior, but now what needs to be done with the ??? question marks. How do we give this function custom behavior? In functional programming, functions are considered values, just like Ints, Strings, Arrays, or any other object. Therefore functions can be passed into other functions as parameters. So if we want to replace the ??? so that it can do anything, we will need to pass in a function, then execute it in the loop.
+This function now defines iterating behavior, but now what needs to be done with the `???` question marks. How do we give this function custom behavior? In functional programming, functions are considered values, just like Ints, Strings, Arrays, or any other object. Therefore functions can be passed into other functions as parameters. So if we want to replace the `???` so that it can do anything, we will need to pass in a function, then execute it in the loop.
 
 ```typescript
 function loop(array: Array<number>, func: (element: number) => null) {

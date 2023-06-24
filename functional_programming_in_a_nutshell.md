@@ -24,17 +24,17 @@ function addWithCounter(x: number, y: number) {
 }
 ```
 
-`addWithCounter` is not a pure function because the output changes each execution. The first time `addWithCounter` is run with `x = 2` and `y = 2`, it will return `4`, but the next time it is run, it returns `5` even though the input values didn't change. If you don't know what the value of `counter` is, then it will be impossible to predict what `addWithCounter` will be when it is called, and that makes it difficult to understand how the program works.
+`addWithCounter` is not a pure function because the output changes each execution. The first time `addWithCounter` is run with `x = 2` and `y = 2`, it will return `4`, but the next time it is run, it returns `5` even though the input values didn't change. If you don't know what the value of `counter` is, then it will be impossible to predict what `addWithCounter` will return when it is called, and that makes it difficult to understand how the program works.
 
-In purely functional programming languages, this is impossible, and it's because of the next trait of functional programming, that state is immutable. This basically means the variables cannot change. Once data is set, it is set. In the case of `addWithCounter`, the `counter` variable could be outside of the function scope, but it can't change:
+In purely functional programming languages, the above example is impossible, and it's because of the next trait of functional programming, that state is immutable. This basically means variables cannot change. Once data is set, it is set. In the case of `addWithCounter`, the `counter` variable could be outside of the function scope, but it can't change:
 
 ```haskell
 counter = 0
 
 addWithCounter :: Int -> Int -> Int
 addWithCounter x y =
-    --using counter from outside the scope of addWithCounter is completely fine
     let
+        --using counter from outside the scope of addWithCounter is completely fine
         sum = x + y + counter
         --this line throws the error
         --"The value of counter is undefined here, so this reference is not allowed."

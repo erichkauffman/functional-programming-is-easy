@@ -111,6 +111,6 @@ class Stack<T> {
 }
 ```
 
-You may be wondering what `<T>` is. Here `T` stands for 'any type'. Instead of using `T`, we can use any upper case word, such as `A`, `B`, `Type`, `StackType`, etc. When we use the new stack for numbers, thn when we say `Stack<number>`, the `T` is replaced by `number`.
+You may be wondering what `<T>` is. Here `T` stands for 'any type'. Instead of using `T`, we can use any upper case word, such as `A`, `B`, `Type`, `StackType`, etc. When we use the new stack for numbers, then when we say `Stack<number>`, the `T` is replaced by `number`.
 
 Here's more information on generics: https://www.typescriptlang.org/docs/handbook/2/generics.html

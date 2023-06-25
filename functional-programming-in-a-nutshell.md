@@ -42,3 +42,5 @@ addWithCounter x y =
     in
         sum
 ```
+
+[Next: Functions as Values](./functions-as-values.md)

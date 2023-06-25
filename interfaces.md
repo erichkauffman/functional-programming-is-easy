@@ -1,0 +1,2 @@
+
+[Next: Generics](./generics.md)

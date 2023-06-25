@@ -1,0 +1,2 @@
+
+[Next: Monads](./monad.md)

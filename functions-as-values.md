@@ -87,7 +87,7 @@ loop(array, fizzBuzzLogic)
 
 Using functions as value isn't only useful for encapsulating looping behavior. It can be used any time you want to allow the function users to vary behavior, particularly when that behavior is surrounded by other, unchanging behavior.
 
-FUNCTIONS AS RETURN VALUES
+TODO: FUNCTIONS AS RETURN VALUES GOES HERE
 
 When you get further into your programming journey, you will (if you haven't already) see functions without names. Anonymous functions are a convenient way to define behavior without creating a 'real' function. They look something like this:
 
@@ -141,4 +141,6 @@ loop(array, (num: number) => {
 })
 ```
 
-If you are very familiar with Object Oriented Patterns, then you might have recognized that this is the (Strategy? Delegator? ...) pattern, but without the need for classes and objects.
+If you are very familiar with Object Oriented Patterns, then you might have recognized that this is the (TODO: Strategy? Delegator? ...) pattern, but without the need for classes and objects.
+
+[Next: Currying](./currying.md)

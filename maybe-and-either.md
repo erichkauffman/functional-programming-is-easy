@@ -1,4 +1,4 @@
-In many programming languages, types can be nullable. For example in Typescript, this means that a variable with the type `number` can be numbers like `1`, `2`, `3`, or can be `null` or `undefined`.
+In many programming languages, types can be nullable. For example in TypeScript, this means that a variable with the type `number` can be numbers like `1`, `2`, `3`, or can be `null` or `undefined`.
 
 ```typescript
 function add(x: number, y: number): number {
@@ -32,3 +32,6 @@ So you may be thinking, what's the point? Why not just use null?
 Reasons
  - Functions that don't expect null don't have to check for null
  - When the value could be empty, you must have a plan for it
+
+
+[Next: Computational context](./computational-context.md)

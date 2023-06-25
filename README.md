@@ -6,3 +6,5 @@ This frustrates me because the concept of monad is actually quite simple, but th
 This guide is intented to make functional programming accessible. I'll show just how simple Functors and Monads (and other FP concepts) really are using simple, practical language and many examples. We can get into the complicated technical, mathematical definitions later.
 
 I am writing this guide for someone who already has some experience programming, either in a functional programming language or an object oriented one. You may find it difficult to follow along if you don't have some experience (but you're welcome to continue reading anyways). I will be providing examples in TypeScript to help bridge the gap between object-oriented programming and functional programming. I will also be providing examples in PureScript because it is very similar to Haskell and is pretty easy to set up because it can be run in Node. I will not be teaching the syntax of either TypeScript or Purescript, but I will link to resources that do.
+
+[Next: Table of Contents](./table-of-contents.md)

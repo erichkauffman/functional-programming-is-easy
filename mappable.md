@@ -108,3 +108,5 @@ class Array<A> {
 In PureScript, this is how `map` is defined for `Maybe`.
 ```purescript
 ```
+
+[Next: Functors](./functor.md)

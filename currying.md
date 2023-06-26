@@ -40,6 +40,8 @@ let multiplyByTen = curriedMultiply(10)
 
 If we look inside `multiplyByTen`, what do you think we would see? `x` is now `10`, but `y` isn't assigned a value yet:
 ```typescript
+//warning: pseudocode ahead!
+
 curriedMultiply(10): number => number {
     return (y: number) => { return 10 * y }
 }

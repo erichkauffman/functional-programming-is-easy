@@ -1,4 +1,4 @@
-***TLDR:*** *Currying is a technique that makes function have only one input and one output. If a function takes multiple parameters, when such a function is curried, it takes the first parameter, and returns a function that takes the next parameter. This transforms functions from `function(a, b, c, ...)` to `function(a)(b)(c)(...)`. Currying makes it easier to create new functions on the fly.*
+***TLDR:*** *Currying is a technique that makes functions have only one input and one output. If a function takes multiple parameters, when such a function is curried, it takes the first parameter, and returns a function that takes the next parameter. This transforms functions from `function(a, b, c, ...)` to `function(a)(b)(c)(...)`. Currying makes it easier to create new functions on the fly.*
 
 What would you do if you wanted to create a function that multiplies every input by 10?
 
@@ -32,13 +32,13 @@ function curriedMultiply(x: number): number => number {
 }
 ```
 
-At first glance, you may be wondering, how is this more convenient? I can barely read it! Let's take a thorough look at it. The beginning of the function should be fairly easy to grasp: this function takes a number `x`, which is pretty normal, but what's not so normal is that it returns a function which takes another `number` and itself returns a `number`. Now take a look at the `return` inside the body of `curriedMultiply`. It takes a number `y` and multiplies it with `x`. Let's play this out by calling `curriedMultiply` with `10`.
+At first glance, you may be wondering, how is this more convenient? I can barely read it! Let's take a thorough look at it. The beginning of the function should be fairly easy to grasp: this function takes a number `x`, which is pretty normal, but what's not so normal is that it returns a function which takes another `number` and itself returns a `number`. Now take a look at the `return` inside the body of `curriedMultiply`. It return a function which takes a number `y` and multiplies it with `x`. Let's play this out by calling `curriedMultiply` with `10`.
 
 ```typescript
 let multiplyByTen = curriedMultiply(10)
 ```
 
-If we look inside this `multiplyByTen`, what do you think we would see? `x` is now `10`, but `y` doesn't have a value:
+If we look inside `multiplyByTen`, what do you think we would see? `x` is now `10`, but `y` isn't assigned a value yet:
 ```typescript
 curriedMultiply(10): number => number {
     return (y: number) => { return 10 * y }
@@ -47,7 +47,7 @@ curriedMultiply(10): number => number {
 multiplyByTen === (y: number) => { return 10 * y }
 ```
 
-So now `multiplyByTen` here is just like the `multiplyByTen` example above. We can call it with another value:
+So now `multiplyByTen` here performs the same computation as the `multiplyByTen` example above. We can call it with another value:
 ```typescript
 let multiplyByTen = curriedMultiply(10)
 let result = multiplyByTen(5)
@@ -61,7 +61,7 @@ curriedMultiply(10)(5) === 50
 
 So effectively what we've done here is transform a function call from `function(a, b)` to `function(a)(b)`.
 
-This technique is called "currying". To be a little more precise, the reason for currying is so a function have only one input and only one output. If we look back at `curriedMultiply`, it only has one input (`x`) and has only one output (the function that takes `y`).
+This technique is called "currying". To be a little more precise, the reason for currying is so a function has only one input and only one output. If we look back at `curriedMultiply`, it only has one input (`x`) and has only one output (the function that takes `y`).
 
 With the currying technique, you can make new functions on the fly, for example:
 ```typescript
@@ -82,7 +82,14 @@ multiply :: Int -> Int -> Int
 multiply x y = x * y
 ```
 
-We can partially apply a value to `multiply` and create new functions:
+We can pass in all the parameters at once:
+```purescript
+multiply 3 5 == 15
+multiply 0 9 == 0
+multiply 11 7 == 77
+```
+
+Or we can partially apply a value to `multiply` and create new functions:
 
 ```purescript
 times2 = multiply 2
